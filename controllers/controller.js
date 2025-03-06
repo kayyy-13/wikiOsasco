@@ -24,6 +24,9 @@ export async function abreedttime(req, res){
 export async function edttime(req, res){
     res.redirect('/admin/time/lst')
 }
-export async function addPlayer(req, res){
-    res.redirect('/admin/time/addPlayer')
+export async function lstjogador(req, res){
+    res.redirect('/admin/jogador/lst')
+}
+export async function addjogador(req, res){
+    res.redirect('/admin/jogador/add')
 }

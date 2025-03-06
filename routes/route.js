@@ -9,7 +9,7 @@ import {
     addtime,
     listartime,
     filtrartime,
-    addPlayer,
+    addjogador,
 } from '../controllers/controller.js'
 router.get('/', home)
 //time
@@ -25,6 +25,6 @@ router.get('/admin/time/del/:id', deletatime)
 router.get('/admin/time/edt/:id', abreedttime)
 router.post('/admin/time/edt/:id', edttime)
 
-router.get('/admin/time/addPlayer/:id', addPlayer)
-router.post('/admin/time/addPlayer/:id', addPlayer)
+router.get('/admin/jogador/add/:id', addjogador)
+router.post('/admin/jogador/add/:id', addjogador)
 export default router
