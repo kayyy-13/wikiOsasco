@@ -24,3 +24,6 @@ export async function abreedttime(req, res){
 export async function edttime(req, res){
     res.redirect('/admin/time/lst')
 }
+export async function addPlayer(req, res){
+    res.redirect('/admin/time/addPlayer')
+}
