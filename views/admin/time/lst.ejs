@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -37,6 +37,57 @@
 
 
     </table>
+</body>
+
+</html>-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Times</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h3>Times</h3>
+        <div class="add-team">
+            <a href="/admin/jogador/lst" class="btn">Jogador</a>
+        </div>
+        <table class="team-table">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Estádio</th>
+                    <th>Opções</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Brasil-PE</td>
+                    <td>Bento Freitas</td>
+                    <td>
+                        <a href="/admin/time/edt/:id" class="edit">Editar</a><br />
+                        <a href="/admin/time/del/1" class="delete">Excluir</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Guarany</td>
+                    <td>Estrela d'Alva</td>
+                    <td>
+                        <a href="/admin/time/edt/:id" class="edit">Editar</a><br />
+                        <a href="/admin/time/del/:id" class="delete">Excluir</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="add-team">
+            <a href="/admin/time/add" class="btn">+ Time</a>
+        </div>
+    </div>
 </body>
 
 </html>

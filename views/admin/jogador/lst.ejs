@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -44,6 +44,65 @@
 
 
     </table>
+</body>
+
+</html>-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogadores</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h3>Jogadores</h3>
+        <div class="ir-time">
+            <a href="/admin/time/lst" class="btn">Time</a>
+        </div>
+        <table class="player-table">
+            <thead>
+                <tr>
+                    <th>Jogador</th>
+                    <th>Altura</th>
+                    <th>Peso</th>
+                    <th>Posição</th>
+                    <th>Opções</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Macris Carneiro</td>
+                    <td>1.78 cm</td>
+                    <td>64.50kg</td>
+                    <td>Levantadora</td>
+                    <td>
+                        <a href="/admin/jogador/edt/:id" class="edit">Editar</a><br />
+                        <a href="/admin/jogador/del/1" class="delete">Excluir</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Thaisa Daher</td>
+                    <td>1.96 cm</td>
+                    <td>76.00kg</td>
+                    <td>Central</td>
+                    <td>
+                        <a href="/admin/jogador/edt/:id" class="edit">Editar</a><br />
+                        <a href="/admin/jogador/del/1" class="delete">Excluir</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="add-player">
+            <a href="/admin/jogador/add" class="btn">+ Jogador</a>
+        </div>
+
+    </div>
 </body>
 
 </html>
