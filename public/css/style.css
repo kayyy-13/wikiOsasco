@@ -401,3 +401,18 @@ button:hover {
 button:active {
     background-color: #00408a;
 }
+
+select {
+    border-color: #007bff;
+    outline: none;
+    background-color: #ffffff;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #555;
+}
+
+/**/
