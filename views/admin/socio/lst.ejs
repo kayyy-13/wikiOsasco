@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Sócios</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-image: url('https://source.unsplash.com/1600x900/?volleyball');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: white;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #000000cc;
+            padding: 20px;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-container img {
+            height: 50px;
+        }
+
+        .logo-text {
+            font-size: 32px;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 12px 16px;
+            border-radius: 5px;
+            background: #d9a94f;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background: #c9732c;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 150px auto 50px;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ffffff33;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .add-link {
+            display: block;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffffff;
+            font-weight: bold;
+            background: #4CAF50;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            width: 250px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .add-link:hover {
+            background: #45a049;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            color: black;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #d9a94f;
+            color: black;
+        }
+
+        a.action-link {
+            color: #2196F3;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        a.action-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="/fotos/Wiki_logo2(1)(1).png" alt="Logo Time de Vôlei">
+            <div class="logo-text">WikiOsasco - Sistema Administrativo</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/admin/Jogo/lst">Jogos</a></li>
+                <li><a href="/admin/Escalacao/lst">Escalação</a></li>
+                <li><a href="/admin/Socio/lst">Sócios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Lista de Sócios</h1>
+        <a class="add-link" href="/admin/Socio/add">Adicionar Novo Sócio</a>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Email</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% socios.forEach(function(socio) { %>
+                    <tr>
+                        <td><%= socio.nome %></td>
+                        <td><%= socio.cpf %></td>
+                        <td><%= socio.email %></td>
+                        <td>
+                            <a class="action-link" href="/admin/Socio/edt/<%= socio._id %>">Editar</a> |
+                            <a class="action-link" href="/admin/Socio/del/<%= socio._id %>" onclick="return confirm('Deseja realmente excluir?')">Excluir</a>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>

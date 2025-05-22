@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Jogos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-image: url('https://source.unsplash.com/1600x900/?volleyball');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: white;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #000000cc;
+            padding: 20px;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-container img {
+            height: 50px;
+        }
+
+        .logo-text {
+            font-size: 32px;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 12px 16px;
+            border-radius: 5px;
+            background: #d9a94f;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background: #c9732c;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: 140px auto 40px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ffffff33;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            color: black;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: center;
+        }
+
+        thead {
+            background-color: #d9a94f;
+            color: black;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tbody tr:hover {
+            background-color: #ddd;
+        }
+
+        a.action-link {
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a.action-link:hover {
+            text-decoration: underline;
+        }
+
+        .add-player {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .btn {
+            background-color: #2196F3;
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0b7dda;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="/fotos/Wiki_logo2(1)(1).png" alt="Logo Time de Vôlei">
+            <div class="logo-text">WikiOsasco - Sistema Administrativo</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/admin/Jogo/lst">Jogos</a></li>
+                <li><a href="/admin/escalacao/lst">Escalação</a></li>
+                <li><a href="/admin/socio/lst">Sócios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content">
+        <h1>Lista de Jogos</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Adversário</th>
+                    <th>Data</th>
+                    <th>Local</th>
+                    <th>Resultado</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% Jogo.forEach(function(Jogo) { %>
+                    <tr>
+                        <td><%= Jogo.adversario %></td>
+                        <td><%= Jogo.data.toLocaleDateString('pt-BR') %></td>
+                        <td><%= Jogo.local %></td>
+                        <td><%= Jogo.resultado || '—' %></td>
+                        <td>
+                            <a class="action-link" href="/admin/Jogo/edt/<%= jogo._id %>">Editar</a> |
+                            <a class="action-link" href="/admin/Jogo/del/<%= jogo._id %>" onclick="return confirm('Deseja excluir este jogo?')">Excluir</a>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+
+        <div class="add-player">
+            <a href="/admin/Jogo/add" class="btn">+ Adicionar Jogo</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

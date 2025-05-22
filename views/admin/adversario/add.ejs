@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Time de Vôlei</title>
+    <title>Adicionar Jogo</title>
     <style>
         * {
             margin: 0;
@@ -71,22 +71,60 @@
             background: #c9732c;
         }
 
-        .main-container {
+        .form-container {
             padding: 50px 20px 40px;
-            max-width: 1000px;
+            max-width: 600px;
             margin: 100px auto;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.6);
             border-radius: 10px;
+            box-shadow: 0 0 10px #ffffff33;
+        }
+
+        h3 {
             text-align: center;
-        }
-
-        h1 {
-            font-size: 36px;
             margin-bottom: 20px;
+            font-size: 28px;
         }
 
-        p {
-            font-size: 20px;
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+        }
+
+        button {
+            margin-top: 25px;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background-color: #2196F3;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0b7dda;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #fff;
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -108,9 +146,18 @@
         </nav>
     </header>
 
-    <div class="main-container">
-        <h1>Bem-vindo ao Sistema Administrativo do Time</h1>
-        <p>Utilize o menu acima para navegar entre as seções de jogos, escalação e sócios.</p>
+    <div class="form-container">
+        <form action="" method="post">
+            <h3>Adicionar Adversario</h3>
+
+            <label for="adversario">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+            <label for="ginasio">Estadio:</label>
+            <input type="text" id="ginasio" name="ginasio" required>
+
+            <button type="submit">Salvar</button>
+        </form>
+        <a class="back-link" href="/admin/Escalacao/lst">Voltar para a lista</a>
     </div>
 
 </body>

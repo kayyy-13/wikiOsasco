@@ -1,11 +1,46 @@
-/* Resetando margens e padding*/
+/* Resetando margens e padding */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/*Estilo do formulário*/
+/* Estilo geral */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #bad2f7;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.Imenor{
+    width: 25%;
+    height: 25%;
+}
+
+/* Container principal */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Títulos */
+h3 {
+    color: #007bff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Formulários e campos de entrada */
 form {
     background-color: #fff;
     padding: 20px;
@@ -15,14 +50,6 @@ form {
     max-width: 400px;
 }
 
-/*Estilo do título*/
-h3 {
-    text-align: center;
-    color: #007bff;
-    margin-bottom: 20px;
-}
-
-/*Estilo dos rótulos*/
 label {
     display: block;
     font-size: 14px;
@@ -30,9 +57,9 @@ label {
     color: #555;
 }
 
-/*Estilo dos campos de entrada*/
 input[type="text"],
-input[type="number"] {
+input[type="number"],
+select {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -42,14 +69,15 @@ input[type="number"] {
     color: #555;
 }
 
-input[type="text"]:focus,
-input[type="number"]:focus {
+input:focus,
+select:focus {
     border-color: #007bff;
     outline: none;
 }
 
-/*Estilo do botão de envio */
-button {
+/* Botões */
+button,
+.btn {
     width: 100%;
     padding: 12px;
     background-color: #007bff;
@@ -59,112 +87,66 @@ button {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-button:hover {
+button:hover,
+.btn:hover {
     background-color: #0056b3;
 }
 
-button:active {
+button:active,
+.btn:active {
     background-color: #00408a;
 }
 
-/* Resetando margens e padding */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
-
-/* Container principal */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    padding: 20px;
-}
-
-/* Estilo do título */
-h3 {
-    text-align: center;
-    color: #007bff;
-    margin-bottom: 20px;
-}
-
-/* Estilo do botão "+ Jogador" */
-.add-player {
-    text-align: right;
-    margin-bottom: 20px;
-}
-
+/* Botões de ação */
+.add-player,
+.add-team,
 .ir-time {
     text-align: right;
     margin-bottom: 20px;
 }
 
-.ir-time .btn {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 14px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.add-player .btn {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 14px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.add-player .btn:hover {
-    background-color: #0056b3;
-}
-
 /* Estilo da tabela */
-.player-table {
+table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
 
-.player-table th,
-.player-table td {
+th,
+td {
     padding: 10px;
     text-align: left;
     border: 1px solid #ccc;
 }
 
-.player-table th {
+th {
     background-color: #f9f9f9;
     color: #007bff;
 }
 
-.player-table tr:nth-child(even) {
+tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-.player-table tr:hover {
+tr:hover {
     background-color: #e2e2e2;
 }
 
-.player-table a {
+/* Links */
+a {
     color: #007bff;
     text-decoration: none;
 }
 
-.player-table a:hover {
+a:hover {
     text-decoration: underline;
 }
 
+/* Ações */
 .edit {
     color: #007bff;
 }
@@ -181,238 +163,12 @@ h3 {
     text-decoration: underline;
 }
 
-/*novo*/
-
-/* Resetando margens e padding */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Estilo geral para o corpo da página */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-}
-
-/* Container principal */
-.container {
-    width: 100%;
-    max-width: 600px;
-    padding: 20px;
-    text-align: center;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilo do título */
-h3 {
-    color: #007bff;
-    margin-bottom: 30px;
-}
-
-/* Estilo dos links de navegação */
-.nav-links a {
-    display: inline-block;
-    background-color: #007bff;
-    color: white;
-    padding: 12px 20px;
-    text-decoration: none;
-    margin: 10px;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-/* Efeito de hover nos links */
-.nav-links a:hover {
-    background-color: #0056b3;
-}
-
-/* Efeito de foco nos links */
-.nav-links a:focus {
-    outline: none;
-    background-color: #00408a;
-}
-
-/*novo 2.0*/
-
-/* Resetando margens e padding */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Estilo geral para o corpo da página */
-
-
-/* Container principal */
-.container {
+.time-container {
     width: 90%;
-    max-width: 1200px;
+    max-width: 450px;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilo do título */
-h3 {
+    box-shadow: 0 4px 8px rgb(255, 153, 0);
     text-align: center;
-    color: #007bff;
-    margin-bottom: 20px;
 }
-
-/* Estilo do botão "+ Time" */
-.add-team {
-    text-align: right;
-    margin-bottom: 20px;
-}
-
-.add-team .btn {
-    background-color: #007bff;
-    color: white;
-    padding: 12px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 14px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.add-team .btn:hover {
-    background-color: #0056b3;
-}
-
-/* Estilo da tabela */
-.team-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-.team-table th,
-.team-table td {
-    padding: 10px;
-    text-align: left;
-    border: 1px solid #ccc;
-}
-
-.team-table th {
-    background-color: #f9f9f9;
-    color: #007bff;
-}
-
-.team-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-.team-table tr:hover {
-    background-color: #e2e2e2;
-}
-
-.team-table a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.team-table a:hover {
-    text-decoration: underline;
-}
-
-.edit {
-    color: #007bff;
-}
-
-.edit:hover {
-    color: #0056b3;
-}
-
-.delete {
-    color: #ff5733;
-}
-
-.delete:hover {
-    text-decoration: underline;
-}
-
-/*novo 3.0*/
-
-/* Resetando margens e padding */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Estilo geral para o corpo da página */
-
-/* Container principal */
-.container {
-    width: 100%;
-    max-width: 600px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilo do título */
-h3 {
-    text-align: center;
-    color: #007bff;
-    margin-bottom: 20px;
-}
-
-label {
-    font-size: 14px;
-    color: #555;
-}
-
-input[type="text"] {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-    color: #555;
-    width: 100%;
-}
-
-input[type="text"]:focus {
-    border-color: #007bff;
-    outline: none;
-}
-
-
-button:hover {
-    background-color: #0056b3;
-}
-
-button:active {
-    background-color: #00408a;
-}
-
-select {
-    border-color: #007bff;
-    outline: none;
-    background-color: #ffffff;
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-    color: #555;
-}
-
-/* */

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogadoras</title>
+    <link rel="stylesheet" href="/css/style.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-image: url('https://source.unsplash.com/1600x900/?volleyball');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: white;
+        }
+
+        .Imenor{
+    width: 25%;
+    height: 25%;
+}
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #000000cc;
+            padding: 20px;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-container img {
+            height: 50px;
+        }
+
+        .logo-text {
+            font-size: 32px;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 12px 16px;
+            border-radius: 5px;
+            background: #d9a94f;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background: #c9732c;
+        }
+
+        .container {
+            padding: 50px 20px 40px;
+            max-width: 1000px;
+            margin: 100px auto;
+            background-color: rgba(30, 30, 30, 0.95);
+            border-radius: 10px;
+        }
+
+        h3 {
+            margin-bottom: 20px;
+            font-size: 28px;
+            text-align: center;
+        }
+
+        .player-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .player-table th,
+        .player-table td {
+            border: 1px solid #fff;
+            padding: 10px;
+        }
+
+        .player-table th {
+            background-color: #d9a94f;
+            color: black;
+        }
+
+        /* Fundo visível e efeito zebra */
+        .player-table tbody tr:nth-child(odd) td {
+            background-color: rgba(70, 70, 70, 0.9);
+        }
+
+        .player-table tbody tr:nth-child(even) td {
+            background-color: rgba(50, 50, 50, 0.9);
+        }
+
+        .edit,
+        .delete,
+        .btn {
+            display: inline-block;
+            padding: 8px 12px;
+            margin: 4px 2px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .edit {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .delete {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .btn {
+            background-color: #2196F3;
+            color: white;
+        }
+
+        .btn:hover {
+            background-color: #030303;
+        }
+
+        .add-player {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="/fotos/Wiki_logo2(1)(1).png" alt="Logo Time de Vôlei">
+            <div class="logo-text">WikiOsasco</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/admin/Jogo/lst">Jogos</a></li>
+                <li><a href="/admin/escalacao/lst">Escalação</a></li>
+                <li><a href="/admin/socio/lst">Socios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h3>Jogadoras</h3>
+
+        <table class="player-table">
+            <thead>
+                <tr>
+                    <th>Foto</th>
+                    <th>Jogadora</th>
+                    <th>Número</th>
+                    <th>Posição</th>
+                    <th>Opções</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tbody>
+                    <% escalacoes.forEach(function(escalacao) { %>
+                      <tr>
+                        <td> <img src = "/fotos/<%=escalacao.foto%>" width="70", height="70",/></td>
+                        <td><%= escalacao.nome %></td>
+                        <td><%= escalacao.numero %></td>
+                        <td><%= escalacao.posicao %></td>
+
+                       
+                        
+                        <td>
+                          <a href="/admin/escalacao/edt/<%= escalacao._id %>" class="edit">Editar</a>
+                          <a href="/admin/escalacao/del/<%= escalacao._id %>" class="delete" onclick="return confirm('Deseja realmente excluir?')">Excluir</a>
+                        </td>
+                      </tr>
+                    <% }) %>
+                  </tbody>
+                  
+            </tbody>
+        </table>
+
+        <div class="add-player">
+            <a href="/admin/escalacao/add" class="btn">Adicionar jogadoras</a>
+        </div>
+        <a class="back-link" href="/">Voltar para a Home</a>
+    </div>
+
+</body>
+
+</html>

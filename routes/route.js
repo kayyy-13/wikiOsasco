@@ -1,47 +1,88 @@
-import express from 'express';
+import express from "express";
 const router = express.Router();
+
+import multer from "multer";
+var storage = multer.diskStorage({
+  filename: function (req, file, cb) {
+    let nome = Date.now() + "-" + file.originalname;
+    cb(null, nome);
+  },
+  destination: function (req, file, cb) {
+    let path = "./public/fotos";
+    cb(null, path);
+  },
+});
+var upload = multer({ storage });
+
 import {
-    home,
-    abreedttime,
-    edttime,
-    abreaddtime,
-    deletatime,
-    addtime,
-    listartime,
-    filtrartime,
-    addjogador,
-    abreaddjogador,
-    listarjogador,
-    filtrarjogador,
-    deletajogador,
-    edtjogador
-} from '../controllers/controller.js'
-router.get('/', home)
-//time
-//create do modelo time (create)
-router.get('/admin/time/add', abreaddtime)
-router.post('/admin/time/add', addtime)
-//rotas do modelo time (read)
-router.get('/admin/time/lst', listartime)
-router.post('/admin/time/lst', filtrartime)
-//rota do modelo time (delete)
-router.get('/admin/time/del/:id', deletatime)
-//rota do modelo time (editar)
-router.get('/admin/time/edt/:id', abreedttime)
-router.post('/admin/time/edt/:id', edttime)
+  home,
+  abreedtescala,
+  edtescala,
+  abreaddescala,
+  deletaescala,
+  addescala,
+  listarescala,
+  filtrarescala,
+  abreedtsocio,
+  edtsocio,
+  abreaddsocio,
+  deletasocio,
+  addsocio,
+  listarsocio,
+  filtrarsocio,
+  abreedtjogo,
+  edtjogo,
+  abreaddjogo,
+  deletajogo,
+  addjogo,
+  listarjogo,
+  filtrarjogo,
+  abreedtadversario,
+  edtadversario,
+  abreaddadversario,
+  deletadversario,
+  addadversario,
+  listaradversario,
+  filtraradversario,
+} from "../controllers/controller.js";
 
-//jogador
-//create do modelo jogador (create)
-router.get('/admin/jogador/add', abreaddjogador)
-router.post('/admin/jogador/add', addjogador)
-//rotas do modelo jogador (read)
-router.get('/admin/jogador/lst', listarjogador)
-router.post('/admin/jogador/lst', filtrarjogador)
-//rota do modelo jogador (delete)
-router.get('/admin/jogador/del/:id', deletajogador)
-//rotas do modelo jogador (read)
-router.get('/admin/jogador/edt/:id', abreaddjogador)
-router.post('/admin/jogador/edt/:id', edtjogador)
+// HOME
+router.get("/", home);
 
+// ESCALAÇÃO
+router.get("/admin/escalacao/add", abreaddescala);
+router.post("/admin/escalacao/add", upload.single("foto"), addescala);
+router.get("/admin/escalacao/lst", listarescala);
+router.post("/admin/escalacao/lst", filtrarescala);
+router.get("/admin/escalacao/del/:id", deletaescala);
+router.get("/admin/escalacao/edt/:id", abreedtescala);
+router.post("/admin/escalacao/edt/:id", upload.single("foto"), edtescala);
 
-export default router
+// SÓCIO
+router.get("/admin/socio/add", abreaddsocio);
+router.post("/admin/socio/add", addsocio);
+router.get("/admin/socio/lst", listarsocio);
+router.post("/admin/socio/lst", filtrarsocio);
+router.get("/admin/socio/del/:id", deletasocio);
+router.get("/admin/socio/edt/:id", abreedtsocio);
+router.post("/admin/socio/edt/:id", edtsocio);
+
+// JOGO
+router.get("/admin/Jogo/add", abreaddjogo);
+router.post("/admin/Jogo/add", addjogo);
+router.get("/admin/Jogo/lst", listarjogo);
+router.post("/admin/Jogo/lst", filtrarjogo);
+router.get("/admin/Jogo/del/:id", deletajogo);
+router.get("/admin/Jogo/edt/:id", abreedtjogo);
+router.post("/admin/Jogo/edt/:id", edtjogo);
+
+// ADVERSARIO
+router.get("/admin/adversario/add", abreaddadversario);
+router.post("/admin/adversario/add", addadversario);
+router.get("/admin/adversario/lst", listaradversario);
+router.post("/admin/adversario/lst", filtraradversario);
+router.get("/admin/adversario/del/:id", deletadversario);
+router.get("/admin/adversario/edt/:id", abreedtadversario);
+router.post("/admin/adversario/edt/:id", edtadversario);
+
+export default router;
