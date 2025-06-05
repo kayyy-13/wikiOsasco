@@ -102,6 +102,15 @@
             font-size: 16px;
         }
 
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+        } 
+
         button {
             margin-top: 25px;
             width: 100%;
@@ -142,6 +151,7 @@
                 <li><a href="/admin/Jogo/lst">Jogos</a></li>
                 <li><a href="/admin/escalacao/lst">Escalação</a></li>
                 <li><a href="/admin/socio/lst">Sócios</a></li>
+                <li><a href="/admin/adversario/add">Adversario</a></li>
             </ul>
         </nav>
     </header>
@@ -150,17 +160,23 @@
         <form action=" " method="post">
             <h3>Editar Jogo</h3>
 
-            <label for="adversario">Adversário:</label>
-            <input type="text" id="adversario" name="adversario" value="<%= jogo.adversario %>" required>
+            <div>
+                <select name="adversario" id="adversario" class="form-control" required>
+                    <option value="">selecione</option>
+                    <%adversario.forEach(function(adversario){%>
+    
+                        <option value='<%=adversario.id%>'><%=adversario.nome%></option>
+                        <%})%>
+                    </div>
 
             <label for="data">Data:</label>
-            <input type="date" id="data" name="data" value="<%= jogo.data.toISOString().substring(0, 10) %>" required>
+            <input type="date" id="data" name="data" value="<%= Jogo.data.toISOString().substring(0, 10) %>" required>
 
             <label for="local">Local:</label>
-            <input type="text" id="local" name="local" value="<%= jogo.local %>" required>
+            <input type="text" id="local" name="local" value="<%= Jogo.local %>" required>
 
             <label for="resultado">Resultado:</label>
-            <input type="text" id="resultado" name="resultado" value="<%= jogo.resultado || '' %>">
+            <input type="text" id="resultado" name="resultado" value="<%= Jogo.resultado || '' %>">
 
             <button type="submit">Atualizar</button>
         </form>

@@ -153,6 +153,7 @@
         <nav>
             <ul>
                 <li><a href="/">Home</a></li>
+                
                 <li><a href="/admin/Jogo/lst">Jogos</a></li>
                 <li><a href="/admin/escalacao/lst">Escalação</a></li>
                 <li><a href="/admin/socio/lst">Sócios</a></li>
@@ -174,15 +175,15 @@
                 </tr>
             </thead>
             <tbody>
-                <% Jogo.forEach(function(Jogo) { %>
+                <% Jogos.forEach(function(Jogo) { %>
                     <tr>
-                        <td><%= Jogo.adversario %></td>
+                        <td><%= Jogo.adversario.nome %></td>
                         <td><%= Jogo.data.toLocaleDateString('pt-BR') %></td>
                         <td><%= Jogo.local %></td>
                         <td><%= Jogo.resultado || '—' %></td>
                         <td>
-                            <a class="action-link" href="/admin/Jogo/edt/<%= jogo._id %>">Editar</a> |
-                            <a class="action-link" href="/admin/Jogo/del/<%= jogo._id %>" onclick="return confirm('Deseja excluir este jogo?')">Excluir</a>
+                            <a class="action-link" href="/admin/Jogo/edt/<%= Jogo._id %>">Editar</a> |
+                            <a class="action-link" href="/admin/Jogo/del/<%= Jogo._id %>" onclick="return confirm('Deseja excluir este jogo?')">Excluir</a>
                         </td>
                     </tr>
                 <% }) %>

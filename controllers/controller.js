@@ -10,7 +10,7 @@ export async function home(req, res) {
 //-------ESCALAÇÃO----------
 
 export async function abreaddescala(req, res) {
-  res.render("admin/escalacao/add");
+  res.render("admin/escalacao/add"); //render n tem /
 }
 
 export async function addescala(req, res) {
@@ -32,14 +32,14 @@ export async function addescala(req, res) {
 
 export async function listarescala(req, res) {
   const escalacoes = await Escalacao.find().sort({ numero: 1 });
-  res.render("/admin/escalacao/lst", { escalacoes });
+  res.render("admin/escalacao/lst", { escalacoes });
 }
 
 export async function filtrarescala(req, res) {
   const escalacoes = await Escalacao.find({
     nome: new RegExp(req.body.pesquisa, "i"),
   });
-  res.render("/admin/escalacao/lst", { escalacoes });
+  res.render("admin/escalacao/lst", { escalacoes });
 }
 
 export async function deletaescala(req, res) {
@@ -50,8 +50,8 @@ export async function deletaescala(req, res) {
 
 export async function abreedtescala(req, res) {
   const id = req.params.id;
-  const escala = await Escalacao.findById(id);
-  res.render("admin/escalacao/edt", { escala });
+  const escalacao = await Escalacao.findById(id);
+  res.render("admin/escalacao/edt", { Escalacao: escalacao });
 }
 
 export async function edtescala(req, res) {
@@ -59,7 +59,7 @@ export async function edtescala(req, res) {
   if (req.file != null) {
     fotoupload = req.file.filename; //se tiver foto, pega o nome e add
   } else {
-    fotoupload = null; // se não tem, é nulo
+    fotoupload = req.Escalacao.foto; // se não tem, é nulo
   }
 
   const id = req.params.id;
@@ -165,7 +165,7 @@ export async function listarjogo(req, res) {
     .catch(function (err) {
       console.log(err);
     });
-  res.render("admin/Jogo/lst", { Jogo: resultado });
+  res.render("admin/Jogo/lst", { Jogos: resultado });
 }
 
 export async function filtrarjogo(req, res) {
@@ -182,10 +182,10 @@ export async function deletajogo(req, res) {
 
 export async function abreedtjogo(req, res) {
   const resultado = await Jogo.findById(req.params.id);
-  const jadversario = await Adversario.find({}).catch(function (err) {
+  const adversario = await Adversario.find({}).catch(function (err) {
     console.log(err);
   });
-  res.render("admin/Jogo/edt", { Jogo: resultado, adversario: jadversario });
+  res.render("admin/Jogo/edt", { Jogo: resultado, adversario: adversario });
 }
 
 export async function edtjogo(req, res) {
@@ -203,13 +203,14 @@ export async function addadversario(req, res) {
     await Adversario.create(req.body);
     res.redirect("/admin/Jogo/add");
   } catch (err) {
+    console.log(err);
     res.status(500).send("Erro ao adicionar adversário");
   }
 }
 
 export async function listaradversario(req, res) {
   const lista = await Adversario.find();
-  res.render("admin/adversario/lst", { lista });
+  res.render("admin/Jogo/lst", { lista });
 }
 
 export async function filtraradversario(req, res) {
@@ -217,7 +218,7 @@ export async function filtraradversario(req, res) {
   const lista = await Adversario.find({
     time: { $regex: busca, $options: "i" },
   });
-  res.render("/admin/adversario/lst", { lista });
+  res.render("admin/adversario/lst", { lista });
 }
 
 export async function deletadversario(req, res) {
