@@ -1,10 +1,11 @@
+/* Seletores globais*/
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
-
+/*Corpo da página*/
 body {
     background-image: url('https://source.unsplash.com/1600x900/?volleyball');
     background-size: cover;
@@ -13,7 +14,7 @@ body {
     color: white;
     background-color:#c9732c ;
 }
-
+/*Cabeçalho fixo (header)*/
 header {
     position: fixed;
     top: 0;
@@ -26,15 +27,15 @@ header {
     justify-content: space-between;
     align-items: center;
 }
-
+/*Container do logotipo*/
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 17px;
 }
 
 .logo-container img {
-    height: 50px;
+    height: 60px;
 }
 
 .logo-text {
@@ -43,13 +44,13 @@ header {
     padding: 10px;
     border-radius: 10px;
 }
-
+/*Menu de navegação*/
 nav ul {
     list-style: none;
     display: flex;
     gap: 20px;
 }
-  /*menu*/
+
 nav a { 
     text-decoration: none;
     color: white;
@@ -63,35 +64,37 @@ nav a {
 nav a:hover {
     background: #c9732c;
 }
-
+/*Conteúdo da página*/
 .content {
-    max-width: 1000px;
-    margin: 140px auto 40px;
+    max-width: 10px;
+    margin: 100px auto 40px;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 10px;
     box-shadow: 0 0 10px #ffffff33;
 }
-
+/*Título*/
 h1 {
     text-align: center;
     margin-bottom: 30px;
 }
-
+/*Tabela*/
 table {
-    width: 100%;
+    width: 50%;
     border-collapse: collapse;
     background-color: white;
     color: black;
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
+    margin: 100px auto 40px;
+    padding: 20px;
 }
-
+/* Células da tabela*/
 th, td {
     padding: 12px 15px;
     text-align: center;
 }
-
+/*Estilo alternado da tabela*/
 thead {
     background-color: #d9a94f;
     color: black;
@@ -104,7 +107,7 @@ tbody tr:nth-child(even) {
 tbody tr:hover {
     background-color: #ddd;
 }
- /*editar e excluir*/
+ /* Links de ação (editar/excluir)*/
 a.action-link {
     color: #007bff;
     text-decoration: none;
@@ -114,16 +117,16 @@ a.action-link {
 a.action-link:hover {
     text-decoration: underline;
 }
-
+/*Seção de adicionar jogador*/
 .add-player {
     margin-top: 20px;
     text-align: center;
 }
-  /*botão adicionar*/
+  /* Botão personalizado (adicionar)*/
 .btn {
     background-color: #2196F3;
     color: white;
-    padding: 12px 20px;
+    padding: 20px 20px;
     text-decoration: none;
     border-radius: 6px;
     font-weight: bold;
@@ -133,4 +136,5 @@ a.action-link:hover {
 .btn:hover {
     background-color: #0b7dda;
 }
-   /*botão adicionar fim*/
+   
+   

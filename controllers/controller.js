@@ -133,6 +133,8 @@ export async function edtsocio(req, res) {
   res.redirect("/admin/socio/lst");
 }
 
+
+
 //-------JOGOS--------
 
 export async function abreaddjogo(req, res) {
