@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-image: url('https://source.unsplash.com/1600x900/?volleyball');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: white;
+    background-color:#c9732c ;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #000000cc;
+    padding: 20px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-container img {
+    height: 50px;
+}
+
+.logo-text {
+    font-size: 32px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+  /*menu*/
+nav a { 
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 12px 16px;
+    border-radius: 5px;
+    background: #d9a94f;
+    transition: background 0.3s;
+}
+
+nav a:hover {
+    background: #c9732c;
+}
+
+.content {
+    max-width: 1000px;
+    margin: 140px auto 40px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ffffff33;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    color: black;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: center;
+}
+
+thead {
+    background-color: #d9a94f;
+    color: black;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #ddd;
+}
+ /*editar e excluir*/
+a.action-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a.action-link:hover {
+    text-decoration: underline;
+}
+
+.add-player {
+    margin-top: 20px;
+    text-align: center;
+}
+  /*botão adicionar*/
+.btn {
+    background-color: #2196F3;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0b7dda;
+}
+   /*botão adicionar fim*/
